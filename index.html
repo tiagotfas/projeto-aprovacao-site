@@ -1,0 +1,465 @@
+```html
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Projeto APROVAÇÃO | Organize seus estudos para concursos</title>
+
+  <meta name="description" content="Projeto APROVAÇÃO: aplicativo de organização, planejamento e acompanhamento de estudos para concursos públicos.">
+
+  <meta name="theme-color" content="#0b1730">
+
+  <style>
+    :root {
+      --navy: #0b1730;
+      --navy-light: #132b52;
+      --gold: #c9a227;
+      --bg: #f5f7fa;
+      --text: #202733;
+      --muted: #5f6875;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(1080px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, #071126, #132b52);
+      color: var(--white);
+      padding: 22px 0;
+      border-bottom: 3px solid var(--gold);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 21px;
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: .2px;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(201, 162, 39, .8);
+      border-radius: 12px;
+      color: var(--gold);
+      font-size: 23px;
+    }
+
+    .nav-link {
+      color: #ffffff;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0b1730, #18365f);
+      color: var(--white);
+      padding: 78px 0 86px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      margin: 0 0 20px;
+      font-size: clamp(34px, 6vw, 55px);
+      line-height: 1.12;
+      letter-spacing: -1px;
+    }
+
+    .hero p {
+      max-width: 690px;
+      color: #e1e8f2;
+      font-size: 18px;
+      margin: 0 0 27px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--gold);
+      color: #101827;
+      padding: 13px 21px;
+      border-radius: 8px;
+      font-weight: 800;
+      font-size: 15px;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      filter: brightness(1.06);
+    }
+
+    .section {
+      padding: 60px 0;
+    }
+
+    .section-white {
+      background: var(--white);
+    }
+
+    .section-title {
+      color: var(--navy);
+      font-size: clamp(26px, 4vw, 34px);
+      line-height: 1.25;
+      margin: 0 0 15px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 740px;
+      margin: 0 0 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid #e4e8ef;
+      border-radius: 13px;
+      padding: 24px;
+      box-shadow: 0 4px 15px rgba(11, 23, 48, .04);
+    }
+
+    .section-white .card {
+      background: #fbfcfe;
+    }
+
+    .card-icon {
+      font-size: 29px;
+      margin-bottom: 10px;
+    }
+
+    .card h3 {
+      color: var(--navy);
+      margin: 0 0 9px;
+      font-size: 19px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .highlight {
+      background: #f9f5e8;
+      border-left: 4px solid var(--gold);
+      padding: 20px 23px;
+      border-radius: 0 9px 9px 0;
+      margin-top: 28px;
+    }
+
+    .highlight p {
+      margin: 0;
+    }
+
+    .contact-box {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 15px;
+      padding: 32px;
+    }
+
+    .contact-box h2 {
+      color: var(--white);
+      margin-top: 0;
+    }
+
+    .contact-box p {
+      color: #e1e8f2;
+    }
+
+    .contact-box a {
+      color: #f2d77b;
+    }
+
+    footer {
+      background: #071126;
+      color: #d9e0ec;
+      padding: 27px 0;
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    footer a {
+      color: #f2d77b;
+      text-decoration: none;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 760px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 58px 0 65px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .nav-link {
+        font-size: 12px;
+      }
+
+      .brand {
+        font-size: 17px;
+      }
+
+      .contact-box {
+        padding: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="./" aria-label="Projeto APROVAÇÃO - página inicial">
+      <span class="brand-mark" aria-hidden="true">PA</span>
+      <span>PROJETO APROVAÇÃO</span>
+    </a>
+
+    <a class="nav-link" href="#sobre">Conheça o projeto</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="container hero-content">
+      <span class="eyebrow">Organização e estratégia de estudos</span>
+
+      <h1>Sua preparação para concursos com mais organização e direção.</h1>
+
+      <p>
+        O Projeto APROVAÇÃO é um aplicativo desenvolvido para ajudar
+        candidatos a organizar a rotina de estudos, planejar atividades
+        e acompanhar sua evolução na preparação para concursos públicos.
+      </p>
+
+      <a class="button" href="#funcionalidades">
+        Conheça as funcionalidades
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="sobre">
+    <div class="container">
+      <h2 class="section-title">Estude com planejamento</h2>
+
+      <p class="section-intro">
+        Uma preparação consistente exige organização, acompanhamento
+        e revisão. O Projeto APROVAÇÃO reúne ferramentas de apoio
+        para estruturar a rotina de estudos em um só aplicativo.
+      </p>
+
+      <div class="highlight">
+        <p>
+          <strong>Nosso propósito:</strong> ajudar você a transformar
+          seu planejamento em uma rotina de estudos organizada,
+          acompanhando o tempo dedicado e as atividades realizadas.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white" id="funcionalidades">
+    <div class="container">
+      <h2 class="section-title">Funcionalidades do aplicativo</h2>
+
+      <p class="section-intro">
+        Os recursos disponíveis podem variar conforme a versão
+        instalada e o perfil de concurso selecionado.
+      </p>
+
+      <div class="grid">
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">📚</div>
+          <h3>Registro de estudos</h3>
+          <p>
+            Registre sessões, matérias, assuntos e tempo dedicado
+            à preparação.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">📅</div>
+          <h3>Planejamento</h3>
+          <p>
+            Organize tarefas, metas e atividades para estruturar
+            sua rotina de estudos.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">📈</div>
+          <h3>Acompanhamento</h3>
+          <p>
+            Consulte informações sobre sessões registradas e acompanhe
+            seu histórico de estudos.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🔄</div>
+          <h3>Revisões</h3>
+          <p>
+            Organize atividades de revisão e acompanhe o andamento
+            do seu planejamento.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🎯</div>
+          <h3>Organização por concurso</h3>
+          <p>
+            Utilize o perfil de concurso disponibilizado no aplicativo
+            para organizar seus estudos de acordo com sua preparação.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🔐</div>
+          <h3>Dados e privacidade</h3>
+          <p>
+            Consulte nossa política de privacidade para entender
+            como os dados são armazenados e tratados.
+          </p>
+        </article>
+
+      </div>
+
+      <div class="highlight">
+        <p>
+          <strong>Sobre o backup:</strong> a disponibilidade do backup
+          no Google Drive depende da versão do aplicativo e da conclusão
+          da configuração e dos testes necessários.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-box">
+        <h2 class="section-title">Informações e contato</h2>
+
+        <p>
+          Para dúvidas sobre o Projeto APROVAÇÃO, privacidade
+          ou tratamento de dados, entre em contato pelo e-mail:
+        </p>
+
+        <p>
+          <strong>
+            <a href="mailto:tiagotfas@gmail.com">
+              tiagotfas@gmail.com
+            </a>
+          </strong>
+        </p>
+
+        <p>
+          Consulte também nossa
+          <a href="https://tiagotfas.github.io/projeto-dpc-politica-privacidade/">
+            Política de Privacidade
+          </a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© 2026 Projeto APROVAÇÃO</span>
+
+    <div class="footer-links">
+      <a href="https://tiagotfas.github.io/projeto-dpc-politica-privacidade/">
+        Política de Privacidade
+      </a>
+
+      <a href="mailto:tiagotfas@gmail.com">
+        Contato
+      </a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+```
