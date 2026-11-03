@@ -148,24 +148,18 @@
 
     .button-outline:hover { background: rgba(201, 162, 39, .12); }
 
-    .button-store {
-      flex-direction: row;
-      padding: 10px 22px;
-      line-height: 1.2;
+
+    .store-badge {
+      display: inline-block;
+      border-radius: 10px;
+      transition: transform .15s ease;
     }
 
-    .button-store small {
-      display: block;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: .6px;
-      text-transform: uppercase;
-      opacity: .8;
-    }
+    .store-badge:hover { transform: translateY(-1px); }
 
-    .button-store strong {
-      display: block;
-      font-size: 17px;
+    .store-badge img {
+      height: 56px;
+      width: auto;
     }
 
     .actions {
@@ -560,17 +554,14 @@
         </p>
 
         <div class="actions">
-          <a class="button button-store" href="https://play.google.com/store/apps/details?id=br.com.projetodpc" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 6 3.5z"/></svg>
-            <span><small>Baixe agora no</small><strong>Google Play</strong></span>
+          <a class="store-badge" href="https://play.google.com/store/apps/details?id=br.com.projetodpc" target="_blank" rel="noopener">
+            <img src="img/google-play-badge.png" width="600" height="178" alt="Disponível no Google Play">
           </a>
 
           <a class="button button-outline" href="#funcionalidades">
             Conheça as funcionalidades
           </a>
         </div>
-
-        <p class="free-note">Disponível para Android.</p>
       </div>
 
       <div class="hero-phone">
@@ -750,9 +741,8 @@
         </p>
 
         <div class="actions">
-          <a class="button button-store" href="https://play.google.com/store/apps/details?id=br.com.projetodpc" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 3.5v17a1 1 0 0 0 1.5.86l14-8.5a1 1 0 0 0 0-1.72l-14-8.5A1 1 0 0 0 6 3.5z"/></svg>
-            <span><small>Baixe agora no</small><strong>Google Play</strong></span>
+          <a class="store-badge" href="https://play.google.com/store/apps/details?id=br.com.projetodpc" target="_blank" rel="noopener">
+            <img src="img/google-play-badge.png" width="600" height="178" alt="Disponível no Google Play">
           </a>
         </div>
       </div>
